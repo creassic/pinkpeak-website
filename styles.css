@@ -16,7 +16,7 @@ body {
     background-color: #0A0A0A;
     background-image: 
         radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 110, 199, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(200, 90, 148, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 40% 80%, rgba(120, 119, 198, 0.05) 0%, transparent 50%);
     background-attachment: fixed;
 }
@@ -36,14 +36,14 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 2.5rem;
-    color: #FF6EC7;
-    text-shadow: 0 0 10px rgba(255, 110, 199, 0.5);
+    color: #C85A94;
+    text-shadow: 0 0 10px rgba(200, 90, 148, 0.5);
 }
 
 h2 {
     font-size: 2rem;
-    color: #FF6EC7;
-    text-shadow: 0 0 8px rgba(255, 110, 199, 0.3);
+    color: #C85A94;
+    text-shadow: 0 0 8px rgba(200, 90, 148, 0.3);
 }
 
 h3 {
@@ -65,8 +65,8 @@ a {
 }
 
 a:hover {
-    color: #FF6EC7;
-    text-shadow: 0 0 8px rgba(255, 110, 199, 0.5);
+    color: #C85A94;
+    text-shadow: 0 0 8px rgba(200, 90, 148, 0.5);
 }
 
 /* Header */
@@ -78,8 +78,8 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 110, 199, 0.2);
-    box-shadow: 0 2px 20px rgba(255, 110, 199, 0.1);
+    border-bottom: 1px solid rgba(200, 90, 148, 0.2);
+    box-shadow: 0 2px 20px rgba(200, 90, 148, 0.1);
 }
 
 nav {
@@ -89,14 +89,15 @@ nav {
     padding: 1rem 0;
 }
 
-.logo h1 {
-    font-size: 1.8rem;
-    color: #FF6EC7;
-    margin: 0;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(255, 110, 199, 0.6);
-    font-family: 'Arial Black', sans-serif;
-    letter-spacing: 1px;
+.header-logo {
+    height: 50px;
+    width: auto;
+    filter: drop-shadow(0 0 8px rgba(200, 90, 148, 0.4));
+    transition: filter 0.3s ease;
+}
+
+.header-logo:hover {
+    filter: drop-shadow(0 0 12px rgba(200, 90, 148, 0.8));
 }
 
 .nav-menu {
@@ -114,10 +115,10 @@ nav {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    background-color: rgba(255, 110, 199, 0.1);
-    color: #FF6EC7;
-    text-shadow: 0 0 8px rgba(255, 110, 199, 0.5);
-    border: 1px solid rgba(255, 110, 199, 0.3);
+    background-color: rgba(200, 90, 148, 0.1);
+    color: #C85A94;
+    text-shadow: 0 0 8px rgba(200, 90, 148, 0.5);
+    border: 1px solid rgba(200, 90, 148, 0.3);
 }
 
 /* Main Content */
@@ -135,7 +136,7 @@ main {
     padding: 4rem 0;
     background: 
         radial-gradient(ellipse at top, rgba(120, 119, 198, 0.1) 0%, transparent 70%),
-        radial-gradient(ellipse at bottom, rgba(255, 110, 199, 0.1) 0%, transparent 70%),
+        radial-gradient(ellipse at bottom, rgba(200, 90, 148, 0.1) 0%, transparent 70%),
         linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
     position: relative;
     overflow: hidden;
@@ -151,23 +152,28 @@ main {
     background-image: url('images/hero-section.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.15;
+    opacity: 0.8;
     z-index: -1;
 }
 
 .hero-content {
     max-width: 800px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(200, 90, 148, 0.3);
 }
 
 .hero-title {
     font-size: 5rem;
     margin-bottom: 1rem;
-    color: #FF6EC7;
+    color: #C85A94;
     font-weight: 900;
     text-shadow: 
-        0 0 20px rgba(255, 110, 199, 0.8),
-        0 0 40px rgba(255, 110, 199, 0.4),
-        0 0 80px rgba(255, 110, 199, 0.2);
+        0 0 20px rgba(200, 90, 148, 0.8),
+        0 0 40px rgba(200, 90, 148, 0.4),
+        0 0 80px rgba(200, 90, 148, 0.2);
     font-family: 'Arial Black', sans-serif;
     letter-spacing: 2px;
     animation: glow 2s ease-in-out infinite alternate;
@@ -175,7 +181,7 @@ main {
 
 .logo-container {
     margin-bottom: 2rem;
-    filter: drop-shadow(0 0 20px rgba(255, 110, 199, 0.8));
+    filter: drop-shadow(0 0 20px rgba(200, 90, 148, 0.8));
     animation: logoGlow 3s ease-in-out infinite alternate;
 }
 
@@ -187,23 +193,23 @@ main {
 
 @keyframes logoGlow {
     from {
-        filter: drop-shadow(0 0 20px rgba(255, 110, 199, 0.8));
+        filter: drop-shadow(0 0 20px rgba(200, 90, 148, 0.8));
     }
     to {
-        filter: drop-shadow(0 0 30px rgba(255, 110, 199, 1)) drop-shadow(0 0 50px rgba(255, 110, 199, 0.6));
+        filter: drop-shadow(0 0 30px rgba(200, 90, 148, 1)) drop-shadow(0 0 50px rgba(200, 90, 148, 0.6));
     }
 }\n\n@keyframes glow {
     from {
         text-shadow: 
-            0 0 20px rgba(255, 110, 199, 0.8),
-            0 0 40px rgba(255, 110, 199, 0.4),
-            0 0 80px rgba(255, 110, 199, 0.2);
+            0 0 20px rgba(200, 90, 148, 0.8),
+            0 0 40px rgba(200, 90, 148, 0.4),
+            0 0 80px rgba(200, 90, 148, 0.2);
     }
     to {
         text-shadow: 
-            0 0 25px rgba(255, 110, 199, 1),
-            0 0 50px rgba(255, 110, 199, 0.6),
-            0 0 100px rgba(255, 110, 199, 0.3);
+            0 0 25px rgba(200, 90, 148, 1),
+            0 0 50px rgba(200, 90, 148, 0.6),
+            0 0 100px rgba(200, 90, 148, 0.3);
     }
 }
 
@@ -242,22 +248,22 @@ main {
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
-    background: linear-gradient(45deg, #FF6EC7, #7877C6);
+    background: linear-gradient(45deg, #C85A94, #7877C6);
     color: #FFFFFF;
     border-radius: 30px;
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 110, 199, 0.3);
+    border: 1px solid rgba(200, 90, 148, 0.3);
     cursor: pointer;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 15px rgba(255, 110, 199, 0.3);
+    box-shadow: 0 0 15px rgba(200, 90, 148, 0.3);
 }
 
 .btn:hover {
-    background: linear-gradient(45deg, #7877C6, #FF6EC7);
+    background: linear-gradient(45deg, #7877C6, #C85A94);
     color: #FFFFFF;
     transform: translateY(-2px);
-    box-shadow: 0 5px 25px rgba(255, 110, 199, 0.5);
+    box-shadow: 0 5px 25px rgba(200, 90, 148, 0.5);
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
 
@@ -283,7 +289,7 @@ section {
 /* About Section */
 .about-section {
     background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
-    border-top: 1px solid rgba(255, 110, 199, 0.2);
+    border-top: 1px solid rgba(200, 90, 148, 0.2);
     border-bottom: 1px solid rgba(120, 119, 198, 0.2);
     padding: 5rem 0;
     position: relative;
@@ -297,7 +303,7 @@ section {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 30% 20%, rgba(255, 110, 199, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 30% 20%, rgba(200, 90, 148, 0.05) 0%, transparent 50%),
         radial-gradient(circle at 70% 80%, rgba(120, 119, 198, 0.05) 0%, transparent 50%);
     pointer-events: none;
 }
@@ -307,14 +313,14 @@ section {
     background: rgba(0, 0, 0, 0.3);
     padding: 2rem;
     border-radius: 15px;
-    border: 1px solid rgba(255, 110, 199, 0.1);
+    border: 1px solid rgba(200, 90, 148, 0.1);
     backdrop-filter: blur(10px);
 }
 
 .about-section h3 {
     margin-bottom: 1.5rem;
-    color: #FF6EC7;
-    text-shadow: 0 0 10px rgba(255, 110, 199, 0.4);
+    color: #C85A94;
+    text-shadow: 0 0 10px rgba(200, 90, 148, 0.4);
 }
 
 .about-section h4 {
@@ -329,24 +335,13 @@ section {
     background: 
         linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%),
         radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 70%),
-        radial-gradient(circle at 80% 20%, rgba(255, 110, 199, 0.1) 0%, transparent 70%);
+        radial-gradient(circle at 80% 20%, rgba(200, 90, 148, 0.1) 0%, transparent 70%);
     padding: 5rem 0;
     border-top: 1px solid rgba(120, 119, 198, 0.2);
-    border-bottom: 1px solid rgba(255, 110, 199, 0.2);
+    border-bottom: 1px solid rgba(200, 90, 148, 0.2);
     position: relative;
 }
 
-.works-gallery::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23FF6EC7" stroke-width="0.1" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
-    pointer-events: none;
-}
 
 .works-gallery h2 {
     text-align: center;
@@ -368,8 +363,8 @@ section {
     transition: all 0.3s ease;
     box-shadow: 
         0 5px 20px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 110, 199, 0.1);
-    border: 1px solid rgba(255, 110, 199, 0.2);
+        inset 0 1px 0 rgba(200, 90, 148, 0.1);
+    border: 1px solid rgba(200, 90, 148, 0.2);
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
@@ -382,7 +377,7 @@ section {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #FF6EC7, #7877C6, #FF6EC7);
+    background: linear-gradient(45deg, #C85A94, #7877C6, #C85A94);
     border-radius: 15px;
     z-index: -1;
     opacity: 0;
@@ -392,7 +387,7 @@ section {
 .work-item:hover {
     transform: translateY(-10px);
     box-shadow: 
-        0 20px 40px rgba(255, 110, 199, 0.3),
+        0 20px 40px rgba(200, 90, 148, 0.3),
         0 10px 20px rgba(120, 119, 198, 0.2);
 }
 
@@ -409,11 +404,11 @@ section {
 .work-image {
     width: 100%;
     height: 200px;
-    background-color: rgba(255, 110, 199, 0.05);
+    background-color: rgba(200, 90, 148, 0.05);
     border-radius: 10px;
     margin-bottom: 1rem;
     overflow: hidden;
-    border: 1px solid rgba(255, 110, 199, 0.2);
+    border: 1px solid rgba(200, 90, 148, 0.2);
     position: relative;
 }
 
@@ -426,7 +421,7 @@ section {
     height: 100%;
     background: linear-gradient(90deg, 
         transparent, 
-        rgba(255, 110, 199, 0.2), 
+        rgba(200, 90, 148, 0.2), 
         transparent
     );
     transition: left 0.5s ease;
@@ -445,8 +440,8 @@ section {
 
 .work-item h3 {
     margin-bottom: 0.5rem;
-    color: #FF6EC7;
-    text-shadow: 0 0 8px rgba(255, 110, 199, 0.4);
+    color: #C85A94;
+    text-shadow: 0 0 8px rgba(200, 90, 148, 0.4);
     font-weight: 600;
 }
 
@@ -634,7 +629,7 @@ html {
 }
 
 .step-number {
-    background: linear-gradient(45deg, #FF6EC7, #7877C6);
+    background: linear-gradient(45deg, #C85A94, #7877C6);
     color: #FFFFFF;
     width: 60px;
     height: 60px;
@@ -646,9 +641,9 @@ html {
     font-weight: 700;
     flex-shrink: 0;
     box-shadow: 
-        0 0 20px rgba(255, 110, 199, 0.4),
+        0 0 20px rgba(200, 90, 148, 0.4),
         inset 0 0 20px rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 110, 199, 0.3);
+    border: 2px solid rgba(200, 90, 148, 0.3);
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
@@ -820,7 +815,7 @@ footer p {
 
 .glitch::before {
     animation: glitch-anim-1 2s infinite linear alternate-reverse;
-    color: #FF6EC7;
+    color: #C85A94;
     z-index: -1;
 }
 
@@ -888,47 +883,15 @@ footer p {
     }
 }
 
-/* Cyberpunk Grid Background */
-.cyber-grid {
-    background-image: 
-        linear-gradient(rgba(255, 110, 199, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 110, 199, 0.1) 1px, transparent 1px),
-        linear-gradient(rgba(120, 119, 198, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(120, 119, 198, 0.05) 1px, transparent 1px);
-    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
-}
-
-/* Scan lines effect */
-.scanlines::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        transparent 50%, 
-        rgba(0, 255, 0, 0.03) 50%
-    );
-    background-size: 100% 4px;
-    pointer-events: none;
-    animation: scanlines 0.1s linear infinite;
-}
-
-@keyframes scanlines {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 4px; }
-}
 
 /* Neon borders */
 .neon-border {
-    border: 1px solid #FF6EC7;
+    border: 1px solid #C85A94;
     box-shadow: 
-        0 0 5px #FF6EC7,
-        0 0 10px #FF6EC7,
-        0 0 20px #FF6EC7,
-        inset 0 0 5px rgba(255, 110, 199, 0.1);
+        0 0 5px #C85A94,
+        0 0 10px #C85A94,
+        0 0 20px #C85A94,
+        inset 0 0 5px rgba(200, 90, 148, 0.1);
 }
 
 .neon-border-blue {
@@ -956,8 +919,8 @@ footer p {
         backdrop-filter: blur(10px);
         flex-direction: column;
         padding: 1rem 0;
-        border-top: 1px solid rgba(255, 110, 199, 0.3);
-        box-shadow: 0 5px 20px rgba(255, 110, 199, 0.2);
+        border-top: 1px solid rgba(200, 90, 148, 0.3);
+        box-shadow: 0 5px 20px rgba(200, 90, 148, 0.2);
     }
     
     .nav-menu.nav-menu-active {
