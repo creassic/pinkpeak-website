@@ -180,28 +180,47 @@ main {
 /* Sections */
 section {
     padding: 4rem 0;
+    scroll-margin-top: 80px;
 }
 
-.team-preview {
+/* Section Headers */
+.page-header {
     text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #8B7D8B;
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
+/* About Section */
+.about-section {
     background-color: rgba(255, 255, 255, 0.3);
+    padding: 5rem 0;
 }
 
-.team-preview h2 {
-    margin-bottom: 2rem;
+.about-section .content-section {
+    margin-bottom: 3rem;
 }
 
-.team-preview p {
+.about-section h3 {
+    margin-bottom: 1.5rem;
+    color: #6B5B73;
+}
+
+.about-section h4 {
+    color: #8B7D8B;
+    margin-bottom: 0.8rem;
     font-size: 1.1rem;
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* Works Gallery */
 .works-gallery {
     background-color: #E8E2D5;
+    padding: 5rem 0;
 }
 
 .works-gallery h2 {
@@ -289,9 +308,49 @@ section {
     text-align: center;
 }
 
-/* About Page */
+/* Process Section */
+.process-section {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5rem 0;
+}
+
+.process-section .step-content h3 {
+    color: #6B5B73;
+    margin-bottom: 2rem;
+}
+
+.process-section .activity-item h4,
+.process-section .production-item h4 {
+    color: #6B5B73;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 5rem 0;
+}
+
+.contact-info-section {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.contact-info-section h3 {
+    margin-bottom: 1.5rem;
+    color: #6B5B73;
+}
+
+.contact-info-section h4 {
+    color: #8B7D8B;
+    margin-bottom: 0.5rem;
+}
+
 .content-section {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .pink-noise-definitions {
@@ -349,9 +408,37 @@ section {
     font-weight: bold;
 }
 
-/* Process Page */
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Active navigation highlighting */
+.nav-menu a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #6B5B73;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* Process Timeline */
 .process-timeline {
-    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 2rem;
 }
 
 .process-step {
@@ -427,26 +514,12 @@ section {
     margin-bottom: 1rem;
 }
 
-/* Contact Page */
-.contact-info {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
+/* Contact Grid Layout */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-}
-
-.contact-section {
-    background-color: rgba(255, 255, 255, 0.4);
-    padding: 2rem;
-    border-radius: 15px;
-}
-
-.contact-section h2 {
-    margin-bottom: 1.5rem;
-    color: #6B5B73;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .contact-methods {
@@ -509,9 +582,71 @@ footer p {
     margin-left: 1rem;
 }
 
+/* Fade-in animations */
+.fade-out {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Navigation */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6B5B73;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-toggle:hover {
+    background-color: rgba(107, 91, 115, 0.1);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+    
     .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(232, 226, 213, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(107, 91, 115, 0.1);
+        box-shadow: 0 5px 20px rgba(107, 91, 115, 0.1);
+    }
+    
+    .nav-menu.nav-menu-active {
+        display: flex;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+        text-align: center;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 1rem;
+        border-radius: 0;
+    }
+    
+    .nav-menu a::after {
         display: none;
     }
     
