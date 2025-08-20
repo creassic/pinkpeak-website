@@ -81,20 +81,32 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 0.75rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .header-logo {
-    height: 40px;
-    max-width: 120px;
+    height: 35px;
     width: auto;
+    max-width: 150px;
+    max-height: 35px;
     filter: drop-shadow(0 0 8px rgba(200, 90, 148, 0.4));
     transition: filter 0.3s ease;
     object-fit: contain;
+    display: block;
 }
 
 .header-logo:hover {
     filter: drop-shadow(0 0 12px rgba(200, 90, 148, 0.8));
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .nav-menu {
@@ -935,6 +947,12 @@ footer p {
         padding: 0 1.5rem;
     }
     
+    .header-logo {
+        height: 32px;
+        max-width: 130px;
+        max-height: 32px;
+    }
+    
     .hero {
         min-height: 70vh;
         padding: 1.5rem 1rem;
@@ -958,6 +976,11 @@ footer p {
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
+    }
+    
+    nav {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
     
     .nav-menu {
@@ -994,8 +1017,9 @@ footer p {
     }
     
     .header-logo {
-        height: 35px;
-        max-width: 100px;
+        height: 28px;
+        max-width: 110px;
+        max-height: 28px;
     }
     
     .hero {
@@ -1106,9 +1130,15 @@ footer p {
         padding: 0 1rem;
     }
     
+    nav {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+    
     .header-logo {
-        height: 30px;
+        height: 24px;
         max-width: 90px;
+        max-height: 24px;
     }
     
     .hero {
